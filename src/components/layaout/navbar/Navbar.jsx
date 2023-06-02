@@ -1,4 +1,3 @@
-import { FaShoppingCart } from "react-icons/fa";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -22,10 +21,6 @@ export default function DenseAppBar() {
           <Typography variant="h6" color="inherit" component="div">
             Productos
           </Typography>
-          <div>
-            <FaShoppingCart color="white" size="20px" />
-            <span>3</span>
-          </div>
         </Toolbar>
       </AppBar>
     </Box>

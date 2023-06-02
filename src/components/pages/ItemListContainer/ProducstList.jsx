@@ -1,3 +1,7 @@
-export const ProducList = () => {
-  return <h1>Productos</h1>;
+export const ProducList = ({ nombre }) => {
+  return (
+    <>
+      <h2>Hola, {nombre}</h2>
+    </>
+  );
 };
