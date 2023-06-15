@@ -1,15 +1,22 @@
-import CartWidget from "./components/Cartwidget/CartWidget";
-import Navbar from "./components/layaout/navbar/Navbar";
-import { ProducList } from "./components/pages/ItemListContainer/ProducstList";
+import Layout from "./components/layaout/Layout";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { menuRoutes } from "./routes/menuRoutes";
 
 const App = () => {
   let saludo = "Bienvenidos";
+
   return (
-    <div>
-      <Navbar />
-      <CartWidget />
-      <ProducList nombre={saludo} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          {menuRoutes.map(({ id, path, Element }) => (
+            <Route key={id} path={path} element={<Element />} />
+          ))}
+        </Route>
+        <Route path="*" element={<h1>Not found</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
