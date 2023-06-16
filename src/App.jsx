@@ -1,20 +1,19 @@
 import Layout from "./components/layaout/Layout";
+import CartContainer from "./components/pages/cart/CartContainer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { menuRoutes } from "./routes/menuRoutes";
+import ProductsListContainer from "./components/pages/productList/ProductsListContainer";
+import ProductDetailContainer from "./components/pages/productDetail/ProductDetailContainer";
 
 const App = () => {
-  let saludo = "Bienvenidos";
-
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          {menuRoutes.map(({ id, path, Element }) => (
-            <Route key={id} path={path} element={<Element />} />
-          ))}
+          <Route path="/" element={<ProductsListContainer />} />
+          <Route path="/itemDetail" element={<ProductDetailContainer />} />
+          <Route path="/cartWidgwt" element={<CartContainer />} />
         </Route>
-        <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
     </BrowserRouter>
   );
